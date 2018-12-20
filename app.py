@@ -1,4 +1,4 @@
-#!python2
+#!python3
 
 '''
 Programa pica que eu nunca termino que monta toda uma escala a partir do tom que você
@@ -98,8 +98,8 @@ def setPentatonicas(index, modo):
 # Main ------------------------------------------------------------------------
 def main():
 	
-	inEscala = raw_input("\nDigite a escala em que deseja compor: ").capitalize()
-	modo = raw_input("Digite 'M' para maior ou 'm' para menor: ")
+	inEscala = input("\nDigite a escala em que deseja compor: ").capitalize()
+	modo = input("Digite 'M' para maior ou 'm' para menor: ")
 
 	# Localizar Index ---------------------------------------------------------
 	if inEscala in acordes:
@@ -107,7 +107,7 @@ def main():
 	elif inEscala in acordesBemois:
 		index = acordesBemois.index(inEscala)
 	else:
-		print "Escala inexistente."
+		print("Escala inexistente.")
 		exit()
 
 	# Construcao --------------------------------------------------------------
@@ -120,47 +120,47 @@ def main():
 		setCampo(construtorMenor, index)
 
 	else:
-		print "Erro!"
+		print("Erro!")
 
 	setPentatonicas(index, modo)
 	#setRelativas(escalaAcordes)
 
 	# Escala ----------------------------------------------------------------------
-	print "\n\nNotas a serem utilizadas:"
-	print "------------------------------------------"
-	print "| %s | %s | %s | %s | %s | %s | %s |" % (escala[0], escala[1], escala[2], escala[3], escala[4], escala[5], escala[6])
-	print "------------------------------------------"
+	print("\n\nNotas a serem utilizadas:")
+	print("------------------------------------------")
+	print("| %s | %s | %s | %s | %s | %s | %s |" % (escala[0], escala[1], escala[2], escala[3], escala[4], escala[5], escala[6]))
+	print("------------------------------------------")
 
 	# Campo Harmonico -------------------------------------------------------------
-	print "\nAcordes a serem utilizados:"
-	print "------------------------------------------"
-	print "| %s | %s | %s | %s | %s | %s | %s |" % (escalaAcordes[0], escalaAcordes[1], escalaAcordes[2], escalaAcordes[3], escalaAcordes[4], escalaAcordes[5], escalaAcordes[6])
-	print "------------------------------------------"
+	print("\nAcordes a serem utilizados:")
+	print("------------------------------------------")
+	print("| %s | %s | %s | %s | %s | %s | %s |" % (escalaAcordes[0], escalaAcordes[1], escalaAcordes[2], escalaAcordes[3], escalaAcordes[4], escalaAcordes[5], escalaAcordes[6]))
+	print("------------------------------------------")
 
 	# Relativas -------------------------------------------------------------------
 	# Detectar o m no final para saber quantos graus avancar / retroceder
-	print "\nRelativas:"
-	print "------------------------------------------"
+	print("\nRelativas:")
+	print("------------------------------------------")
 	#print "| %s | %s | %s | %s | %s | %s | %s |" % (relativas[0], relativas[1], relativas[2], relativas[3], relativas[4], relativas[5], relativas[6])
-	print "------------------------------------------"
+	print("------------------------------------------")
 	
 	# Pentatonicas ----------------------------------------------------------------
 	'''
 	Maior: Tonica - 2 maior - 3 maior - 5 justa - 6 maior (0, 2, 4, 7, 9)
 	Menor: Tonica, 3 menor - 4 justa - 5 justa - 7 menor (0, 3, 5, 7, 10)
 	'''
-	print "\nPentatonicas:"
-	print "----------------------------"
-	print "| %s | %s | %s | %s | %s |" % (pentatonicas[0], pentatonicas[1], pentatonicas[2], pentatonicas[3], pentatonicas[4])
-	print "----------------------------"
+	print("\nPentatonicas:")
+	print("----------------------------")
+	print("| %s | %s | %s | %s | %s |" % (pentatonicas[0], pentatonicas[1], pentatonicas[2], pentatonicas[3], pentatonicas[4]))
+	print("----------------------------")
 
 	# Harmonia Funcional ----------------------------------------------------------
-	print "\nHarmonia Funcional:"
-	print "------------------------------------------"
-	print "Tonicas: %s, %s, %s" % (escalaAcordes[0], escalaAcordes[2], escalaAcordes[5])
-	print "Dominantes: %s, %s" % (escalaAcordes[4], escalaAcordes[6])
-	print "Subdominantes: %s, %s" % (escalaAcordes[1], escalaAcordes[3])
-	print "------------------------------------------"
+	print("\nHarmonia Funcional:")
+	print("------------------------------------------")
+	print("Tonicas: %s, %s, %s" % (escalaAcordes[0], escalaAcordes[2], escalaAcordes[5]))
+	print("Dominantes: %s, %s" % (escalaAcordes[4], escalaAcordes[6]))
+	print("Subdominantes: %s, %s" % (escalaAcordes[1], escalaAcordes[3]))
+	print("------------------------------------------")
 
 # TODO: GUI -------------------------------------------------------------------
 
