@@ -1,6 +1,5 @@
 #!python3
 from pychord import Chord
-from pychord.constants import NOTE_VAL_DICT
 
 '''
 Campo harmonico maior:
@@ -20,33 +19,30 @@ IM | IIm | IIIm | IVM | VM | VIm | VIIº
 
 '''
 
-class HarmonicFields:
+class CampoHarmonico:
 
-	MAJOR_CONSTRUCTOR = (2, 2, 1, 2, 2, 2)
-	notas_validas = NOTE_VAL_DICT.keys()
+	CONSTRUTOR_MAIOR = (2, 2, 1, 2, 2, 2)
 	
-	def set_scale(self, note, complement='M'):
+	def set_scale(self, nota, complemento='M'):
 		''' Define em qual escala o campo será baseado. '''
-		if note in self.notas_validas and complement in ('m', 'M'):
-			self.note = Chord(note)
-			self.complement = complement
-		else:
-			print("Nota ou complemento inexistente")
+		self.nota = Chord(nota)
+		self.complemento = complemento
 
-	def form_field(self):
+	def set_field(self):
 		''' Monta os acordes do campo harmônico. '''
-		note = self.note
+		note = self.nota
 		field = [note.chord]
 		count = 1
-		for i in self.MAJOR_CONSTRUCTOR:
+		for i in self.CONSTRUTOR_MAIOR:
 			note.transpose(i)
 			field.append(note.chord)
+		
 		return field
 
 if __name__=='__main__':
-	teste = HarmonicFields()
+	teste = CampoHarmonico()
 	teste.set_scale('C')
-	field = teste.form_field()
+	field = teste.set_field()
 	print(field)
 
 # Ja esta montando o fieid, falta colocar se é maior ou menor.
