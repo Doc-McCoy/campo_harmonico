@@ -1,6 +1,24 @@
 #!python3
 from pychord import Chord
-from pychord.constants import NOTE_VAL_DICT 
+from pychord.constants import NOTE_VAL_DICT, SHARPED_SCALE
+
+'''
+Campo harmonico maior:
+C | D | E | F | G | A | B
+1 | 2 | 3 | 4 | 5 | 6 | 7
+
+3 tipos de acorde:
+- Maior
+- Menor
+- Diminuto
+
+Fórmula do campo harmônio maior:
+1T | 1T | 1/2T | 1T | 1T | 1T | 1/2T
+
+Sequencia:
+IM | IIm | IIIm | IVM | VM | VIm | VIIº
+
+'''
 
 class HarmonicFields:
 
