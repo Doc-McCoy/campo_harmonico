@@ -22,6 +22,9 @@ IM | IIm | IIIm | IVM | VM | VIm | VIIº
 class CampoHarmonico:
 
 	CONSTRUTOR_MAIOR = (2, 2, 1, 2, 2, 2)
+	# tom, tom, semitom, tom, tom, tom
+	CARACTERÍSTICAS = ("M", "m", "m", "M", "M", "m", "º")
+	# Maior, menor, menor, maior, maior, menor, diminuta
 	
 	def set_scale(self, nota, complemento='M'):
 		''' Define em qual escala o campo será baseado. '''
