@@ -1,29 +1,11 @@
 #!python3
 from pychord import Chord
 
-'''
-Campo harmonico maior:
-C | D | E | F | G | A | B
-1 | 2 | 3 | 4 | 5 | 6 | 7
-
-3 tipos de acorde:
-- Maior
-- Menor
-- Diminuto
-
-Fórmula do campo harmônio maior:
-1T | 1T | 1/2T | 1T | 1T | 1T | 1/2T
-
-Sequencia:
-IM | IIm | IIIm | IVM | VM | VIm | VIIº
-
-'''
-
 class CampoHarmonico:
 
-	CONSTRUTOR_MAIOR = (2, 2, 1, 2, 2, 2)
-	# tom, tom, semitom, tom, tom, tom
-	CARACTERÍSTICAS = ("M", "m", "m", "M", "M", "m", "º")
+	CONSTRUTOR_MAIOR = (0, 2, 2, 1, 2, 2, 2)
+	# inicial, tom, tom, semitom, tom, tom, tom
+	CARACTERÍSTICAS = ("M", "m", "m", "M", "M", "m", "7-5")
 	# Maior, menor, menor, maior, maior, menor, diminuta
 	
 	def set_scale(self, nota, complemento='M'):
