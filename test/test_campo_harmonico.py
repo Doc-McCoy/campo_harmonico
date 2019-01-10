@@ -6,18 +6,21 @@ from campo_harmonico.campo_harmonico import CampoHarmonico
 class TestHarmonicFields(unittest.TestCase):
 
     def setUp(self):
+        """ Instanciar a classe que será testada. """
         self.app = CampoHarmonico()
 
     def test_set_scale(self):
+        """ Seta um tom para a classe. """
         self.app.set_scale("C")
         self.assertIsInstance(self.app.nota, Chord)
         self.assertEqual(self.app.nota, Chord("C"))
 
     def test_set_field(self):
+        """ Testa o construtor de campo harmônico para todos os tons. """
         escala_c = ["C", "Dm", "Em", "F", "G", "Am", "Bm7-5"]
         escala_d = ["D", "Em", "F#m", "G", "A", "Bm", "C#m7-5"]
         escala_e = ["E", "F#m", "G#m", "A", "B", "C#m", "D#m7-5"]
-        escala_f = ["F", "Gm", "Am", "Bb", "C", "Dm", "Em7-5"]
+        escala_f = ["F", "Gm", "Am", "A#", "C", "Dm", "Em7-5"]
         escala_g = ["G", "Am", "Bm", "C", "D", "Em", "F#m7-5"]
         escala_a = ["A", "Bm", "C#m", "D", "E", "F#m", "G#m7-5"]
         escala_b = ["B", "C#m", "D#m", "E", "F#", "G#m", "A#m7-5"]
@@ -29,7 +32,7 @@ class TestHarmonicFields(unittest.TestCase):
         self.app.set_scale("D")
         field = self.app.set_field()
         self.assertEqual(field, escala_d)
-        
+
         self.app.set_scale("E")
         field = self.app.set_field()
         self.assertEqual(field, escala_e)
@@ -49,7 +52,14 @@ class TestHarmonicFields(unittest.TestCase):
         self.app.set_scale("B")
         field = self.app.set_field()
         self.assertEqual(field, escala_b)
-    
+
+    def test_set_notes(self):
+        """ Testa a lista de notas que o tom poderá usar. """
+        self.app.set_scale("C")
+        self.app.set_field()
+        notes = self.app.set_notes()
+        self.assertTrue(set(notes).issubset(["C", "D", "E", "F", "G", "A", "B"]))
+
 
 if __name__ == '__main__':
     unittest.main()
