@@ -5,6 +5,8 @@ class CampoHarmonico:
 
 	CONSTRUTOR_MAIOR = (0, 2, 2, 1, 2, 2, 2)
 	# inicial, tom, tom, semitom, tom, tom, tom
+	CONSTRUTOR_MENOR = (0, 1, 2, 2, 1, 2, 2)
+	# inicial, semitom, tom, tom, semitom, tom, tom
 	CARACTERISTICAS = ("", "m", "m", "", "", "m", "m7-5")
 	# Maior, menor, menor, maior, maior, menor, diminuta
 	# Os campos vazios "" são acordes maiores,
@@ -22,7 +24,9 @@ class CampoHarmonico:
 		index_caracteristicas = 0
 		self.field = []
 
-		for i in self.CONSTRUTOR_MAIOR:
+		construtor = self.CONSTRUTOR_MAIOR if self.complemento == "M" else self.CONSTRUTOR_MENOR
+
+		for i in construtor:
 			note.transpose(i, self.nota.chord)
 			self.field.append(note.chord + self.CARACTERISTICAS[index_caracteristicas])
 			index_caracteristicas += 1
