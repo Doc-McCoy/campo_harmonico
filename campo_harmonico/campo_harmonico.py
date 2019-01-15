@@ -46,5 +46,3 @@ class CampoHarmonico:
 
 if __name__=='__main__':
 	pass
-
-# Ja esta montando o fieid, falta colocar se é maior ou menor.

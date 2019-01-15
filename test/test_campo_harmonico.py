@@ -17,41 +17,41 @@ class TestHarmonicFields(unittest.TestCase):
 
     def test_set_field(self):
         """ Testa o construtor de campo harmônico para todos os tons. """
-        escala_c = ["C", "Dm", "Em", "F", "G", "Am", "Bm7-5"]
-        escala_d = ["D", "Em", "F#m", "G", "A", "Bm", "C#m7-5"]
-        escala_e = ["E", "F#m", "G#m", "A", "B", "C#m", "D#m7-5"]
-        escala_f = ["F", "Gm", "Am", "A#", "C", "Dm", "Em7-5"]
-        escala_g = ["G", "Am", "Bm", "C", "D", "Em", "F#m7-5"]
-        escala_a = ["A", "Bm", "C#m", "D", "E", "F#m", "G#m7-5"]
-        escala_b = ["B", "C#m", "D#m", "E", "F#", "G#m", "A#m7-5"]
+        escala_c_major = ["C", "Dm", "Em", "F", "G", "Am", "Bm7-5"]
+        escala_d_major = ["D", "Em", "F#m", "G", "A", "Bm", "C#m7-5"]
+        escala_e_major = ["E", "F#m", "G#m", "A", "B", "C#m", "D#m7-5"]
+        escala_f_major = ["F", "Gm", "Am", "A#", "C", "Dm", "Em7-5"]
+        escala_g_major = ["G", "Am", "Bm", "C", "D", "Em", "F#m7-5"]
+        escala_a_major = ["A", "Bm", "C#m", "D", "E", "F#m", "G#m7-5"]
+        escala_b_major = ["B", "C#m", "D#m", "E", "F#", "G#m", "A#m7-5"]
 
         self.app.set_scale("C")
         field = self.app.set_field()
-        self.assertEqual(field, escala_c)
+        self.assertEqual(field, escala_c_major)
 
         self.app.set_scale("D")
         field = self.app.set_field()
-        self.assertEqual(field, escala_d)
+        self.assertEqual(field, escala_d_major)
 
         self.app.set_scale("E")
         field = self.app.set_field()
-        self.assertEqual(field, escala_e)
+        self.assertEqual(field, escala_e_major)
 
         self.app.set_scale("F")
         field = self.app.set_field()
-        self.assertEqual(field, escala_f)
+        self.assertEqual(field, escala_f_major)
 
         self.app.set_scale("G")
         field = self.app.set_field()
-        self.assertEqual(field, escala_g)
+        self.assertEqual(field, escala_g_major)
 
         self.app.set_scale("A")
         field = self.app.set_field()
-        self.assertEqual(field, escala_a)
+        self.assertEqual(field, escala_a_major)
 
         self.app.set_scale("B")
         field = self.app.set_field()
-        self.assertEqual(field, escala_b)
+        self.assertEqual(field, escala_b_major)
 
     def test_set_notes(self):
         """ Testa a lista de notas que o tom poderá usar. """
